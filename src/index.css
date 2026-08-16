@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8c1875 black;
+}
+
+@utility font-pixel {
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
 @theme {
   --font-arcade: "Press Start 2P", monospace;
 
@@ -21,35 +31,65 @@
   --animate-blink: blink 1s steps(1) infinite;
   --animate-blink-slow: blink 1.4s steps(1) infinite;
   --animate-blink-coin: blink 1.2s steps(1) infinite;
-  --animate-ticker: ticker 20s linear infinite;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: .15; transform: scale(.8); }
-  50% { opacity: 1; transform: scale(1.2); }
+
+  0%,
+  100% {
+    opacity: .15;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 @keyframes gridmove {
-  from { background-position-y: 0; }
-  to { background-position-y: 48px; }
+  from {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: 48px;
+  }
 }
 
 @keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes neon-pulse {
-  0%, 100% { text-shadow: 0 0 6px #ffb300, 0 0 18px #ff7a00, 4px 4px 0 #a30057; }
-  50% { text-shadow: 0 0 14px #ffe600, 0 0 44px #ff7a00, 4px 4px 0 #a30057; }
+
+  0%,
+  100% {
+    text-shadow: 0 0 6px #ffb300, 0 0 18px #ff7a00, 4px 4px 0 #a30057;
+  }
+
+  50% {
+    text-shadow: 0 0 14px #ffe600, 0 0 44px #ff7a00, 4px 4px 0 #a30057;
+  }
 }
 
 @keyframes blink {
-  0%, 60% { opacity: 1; }
-  61%, 100% { opacity: 0; }
-}
 
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  0%,
+  60% {
+    opacity: 1;
+  }
+
+  61%,
+  100% {
+    opacity: 0;
+  }
 }
